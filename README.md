@@ -1,17 +1,10 @@
-# Departure Companion — Visual Demo
+# Departure Companion — Visual Demo v2
 
-This is the first fake but visually complete dashboard.
+Tablet-tuned visual demo.
 
-## Files
-
-- `index.html`
-- `style.css`
-- `app.js`
-- `manifest.json`
-- `sw.js`
-
-## How to test
-
-Open `index.html` in a browser, or publish the folder with GitHub Pages.
-
-The data is intentionally hardcoded for this first visual validation.
+Changes:
+- calmer colors
+- better landscape sizing
+- page remains scrollable
+- fullscreen button toggles enter/exit
+- smaller typography for GT-P5100

@@ -6,18 +6,36 @@ function updateClock() {
   document.getElementById("date").textContent = date;
 }
 
-function enterFullscreen() {
+function isFullscreen() {
+  return document.fullscreenElement || document.webkitFullscreenElement;
+}
+
+function updateFullscreenButton() {
+  var btn = document.getElementById("fullscreenBtn");
+  if (!btn) return;
+  btn.textContent = isFullscreen() ? "↙ Exit fullscreen" : "⛶ Fullscreen";
+}
+
+function toggleFullscreen() {
+  if (isFullscreen()) {
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    return;
+  }
+
   var el = document.documentElement;
   if (el.requestFullscreen) el.requestFullscreen();
   else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
 }
 
-document.getElementById("fullscreenBtn").addEventListener("click", enterFullscreen);
+document.getElementById("fullscreenBtn").addEventListener("click", toggleFullscreen);
+document.addEventListener("fullscreenchange", updateFullscreenButton);
+document.addEventListener("webkitfullscreenchange", updateFullscreenButton);
 
 updateClock();
+updateFullscreenButton();
 setInterval(updateClock, 30000);
 
-// Small PWA helper. The app remains usable even if service workers are unsupported.
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js").catch(function () {});
 }
