@@ -1,10 +1,10 @@
 {
   "name": "Departure Companion",
   "short_name": "Departure",
-  "start_url": "./index.html",
+  "start_url": "./index.html?v=4",
   "display": "fullscreen",
-  "background_color": "#080c12",
-  "theme_color": "#080c12",
+  "background_color": "#090d12",
+  "theme_color": "#090d12",
   "orientation": "landscape-primary",
   "icons": []
 }

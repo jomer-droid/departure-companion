@@ -1,11 +1,10 @@
-# Departure Companion — Visual Demo v3
+# Departure Companion — Visual Demo v4
 
-Tablet-rendering debug version.
+Conservative rendering version for old Firefox/Android tablet.
 
-Changes:
-- removed gradients, transparency and shadows
-- removed hero divider line
-- smaller default layout
-- presentation mode toggle with 'Smaller screen'
-- cache-busting v3 asset references
-- scroll-safe landscape layout
+- no service worker/cache
+- no CSS grid
+- no transforms
+- no gradients/transparency/shadows
+- solid cards only
+- stable fullscreen button
