@@ -10,32 +10,49 @@ function isFullscreen() {
   return document.fullscreenElement || document.webkitFullscreenElement;
 }
 
-function updateFullscreenButton() {
-  var btn = document.getElementById("fullscreenBtn");
-  if (!btn) return;
-  btn.textContent = isFullscreen() ? "↙ Exit fullscreen" : "⛶ Fullscreen";
+function setPresentationMode(active) {
+  document.body.classList.toggle("presentation", active);
+  var btn = document.getElementById("presentationBtn");
+  btn.textContent = active ? "↙ Smaller screen" : "⛶ Presentation mode";
 }
 
-function toggleFullscreen() {
-  if (isFullscreen()) {
-    if (document.exitFullscreen) document.exitFullscreen();
-    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+function requestFull() {
+  var el = document.documentElement;
+  if (el.requestFullscreen) return el.requestFullscreen();
+  if (el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
+}
+
+function exitFull() {
+  if (document.exitFullscreen) return document.exitFullscreen();
+  if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+}
+
+function togglePresentation() {
+  var active = document.body.classList.contains("presentation");
+
+  if (active) {
+    setPresentationMode(false);
+    try { exitFull(); } catch (e) {}
     return;
   }
 
-  var el = document.documentElement;
-  if (el.requestFullscreen) el.requestFullscreen();
-  else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  setPresentationMode(true);
+  try { requestFull(); } catch (e) {}
 }
 
-document.getElementById("fullscreenBtn").addEventListener("click", toggleFullscreen);
-document.addEventListener("fullscreenchange", updateFullscreenButton);
-document.addEventListener("webkitfullscreenchange", updateFullscreenButton);
+document.getElementById("presentationBtn").addEventListener("click", togglePresentation);
+
+document.addEventListener("fullscreenchange", function () {
+  setPresentationMode(!!isFullscreen());
+});
+document.addEventListener("webkitfullscreenchange", function () {
+  setPresentationMode(!!isFullscreen());
+});
 
 updateClock();
-updateFullscreenButton();
+setPresentationMode(false);
 setInterval(updateClock, 30000);
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").catch(function () {});
+  navigator.serviceWorker.register("sw.js?v=3").catch(function () {});
 }

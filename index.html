@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0b1118">
+  <meta name="theme-color" content="#080c12">
   <title>Departure Companion</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-  <main class="app-shell">
+  <main class="app-shell" id="appShell">
     <header class="topbar">
       <div>
         <div class="location">📍 Lausanne, Switzerland</div>
         <div class="subtitle">Departure Companion</div>
       </div>
       <div class="clock">
-        <div id="time">23:16</div>
+        <div id="time">23:36</div>
         <div id="date">dimanche 21 juin</div>
       </div>
       <div class="current-mini">☀️ <strong>18°C</strong></div>
@@ -61,7 +61,7 @@
           <div><strong>M2 · Sallaz</strong><small>150 m away → Lausanne-Flon</small></div>
           <div class="minutes">3<small>min</small></div>
         </div>
-        <div class="divider"></div>
+        <div class="simple-separator"></div>
         <div class="trip-line">
           <div class="badge bus">6</div>
           <div><strong>Bus 6</strong><small>280 m away → Lausanne-Gare</small></div>
@@ -103,9 +103,9 @@
       <button class="nav active">⌂ Home</button>
       <button class="nav">▥ Forecast</button>
       <button class="nav">⚙ Settings</button>
-      <button id="fullscreenBtn" class="mode">⛶ Fullscreen</button>
+      <button id="presentationBtn" class="mode">⛶ Presentation mode</button>
     </footer>
   </main>
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
