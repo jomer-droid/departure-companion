@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111d">
+  <title>Departure Companion</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="location">📍 Lausanne, Switzerland</div>
+        <div class="subtitle">Departure Companion</div>
+      </div>
+      <div class="clock">
+        <div id="time">13:42</div>
+        <div id="date">Sunday, 26 May</div>
+      </div>
+      <div class="current-mini">☀️ <strong>18°C</strong></div>
+    </header>
+
+    <section class="grid">
+      <article class="card hero-card">
+        <div class="card-label">Leaving home</div>
+        <div class="hero-content">
+          <div class="hero-icon">☔</div>
+          <div>
+            <h1>Take umbrella</h1>
+            <p class="main-reason">Rain expected from 16:00 to 18:00</p>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div><span class="metric-icon">🌡️</span><strong>18°C</strong><small>Now</small></div>
+          <div><strong class="warm">21°C</strong><small>Max today</small></div>
+          <div><strong class="cool">14°C</strong><small>Min today</small></div>
+          <div><span class="metric-icon">🚇</span><strong class="green">3 min</strong><small>Leave now</small></div>
+        </div>
+      </article>
+
+      <article class="card forecast-card">
+        <div class="card-label">Weather — next 12 hours</div>
+        <div class="forecast-row">
+          <div class="forecast-slot active"><b>Now</b><span>☁️</span><strong>18°C</strong><small>💧10%</small><em>13:00</em></div>
+          <div class="forecast-slot"><b>+2h</b><span>🌤️</span><strong>19°C</strong><small>💧20%</small><em>15:00</em></div>
+          <div class="forecast-slot"><b>+4h</b><span>🌦️</span><strong>20°C</strong><small>💧40%</small><em>17:00</em></div>
+          <div class="forecast-slot rain"><b>+6h</b><span>🌧️</span><strong>18°C</strong><small>💧80%</small><em>19:00</em></div>
+          <div class="forecast-slot rain"><b>+8h</b><span>🌧️</span><strong>17°C</strong><small>💧90%</small><em>21:00</em></div>
+          <div class="forecast-slot"><b>+10h</b><span>☁️</span><strong>16°C</strong><small>💧20%</small><em>23:00</em></div>
+          <div class="forecast-slot"><b>+12h</b><span>🌙</span><strong>14°C</strong><small>💧10%</small><em>01:00</em></div>
+        </div>
+      </article>
+
+      <article class="card trip-card">
+        <div class="card-label">Next useful trip</div>
+        <div class="trip-line">
+          <div class="badge metro">M</div>
+          <div><strong>M2 · Sallaz</strong><small>150 m away → Lausanne-Flon</small></div>
+          <div class="minutes">3<small>min</small></div>
+        </div>
+        <div class="divider"></div>
+        <div class="trip-line">
+          <div class="badge bus">6</div>
+          <div><strong>Bus 6</strong><small>280 m away → Lausanne-Gare</small></div>
+          <div class="minutes purple">5<small>min</small></div>
+        </div>
+        <p class="updated">ⓘ Departures updated just now</p>
+      </article>
+
+      <article class="card transport-card">
+        <div class="card-label">Nearby transport</div>
+        <div class="transport-group">
+          <h3>🚇 Metro</h3>
+          <div class="transport-item"><span><b>M2</b> Sallaz<br><small>→ Lausanne-Flon</small></span><span>150 m<br><b>3 min</b></span></div>
+          <div class="transport-item"><span><b>M2</b> Fourmi<br><small>→ Ouchy-Olympique</small></span><span>240 m<br><b>6 min</b></span></div>
+        </div>
+        <div class="transport-group">
+          <h3>🚌 Bus</h3>
+          <div class="transport-item"><span><b>6</b> Bus 6<br><small>→ Lausanne-Gare</small></span><span>280 m<br><b>5 min</b></span></div>
+          <div class="transport-item"><span><b>41</b> Bus 41<br><small>→ Malley</small></span><span>320 m<br><b>9 min</b></span></div>
+        </div>
+      </article>
+
+      <article class="card destinations-card">
+        <div class="card-label">♡ Favorite destinations</div>
+        <div class="destination">
+          <div class="dest-icon">🏙️</div>
+          <div><strong>Lausanne-Flon</strong><small>via Metro M2</small></div>
+          <div class="minutes">3<small>min</small></div>
+        </div>
+        <div class="destination">
+          <div class="dest-icon">🏢</div>
+          <div><strong>Malley</strong><small>via Bus 6</small></div>
+          <div class="minutes purple">9<small>min</small></div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <button class="nav active">⌂ Home</button>
+      <button class="nav">▥ Forecast</button>
+      <button class="nav">⚙ Settings</button>
+      <button id="fullscreenBtn" class="mode">⛶ Fullscreen</button>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
