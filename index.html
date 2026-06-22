@@ -1,1 +1,32 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1280, initial-scale=1"><meta name="theme-color" content="#090d12"><title>Departure Companion</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css?v=5"></head><body><div class="dashboard"><header class="topbar"><div class="location">📍 Lausanne, Switzerland<br><span>Departure Companion</span></div><div class="clock"><div id="time">01:18</div><span id="date">lundi 22 juin</span></div><div class="mini-weather">☀️ 18°C</div></header><section class="top-row"><article class="card hero"><div class="label">Leaving home</div><div class="hero-main"><span>☔</span><div><h1>Take umbrella</h1><p>Rain expected from 16:00 to 18:00</p></div></div><div class="metrics"><div><b>18°C</b><small>Now</small></div><div><b class="warm">21°C</b><small>Max today</small></div><div><b class="cool">14°C</b><small>Min today</small></div><div><b class="green">3 min</b><small>Next metro</small></div></div></article><article class="card forecast"><div class="label">Weather — next 12 hours</div><div class="slots"><div><b>Now</b><span>☁️</span><strong>18°C</strong><small>💧10%</small><em>13:00</em></div><div><b>+2h</b><span>🌤️</span><strong>19°C</strong><small>💧20%</small><em>15:00</em></div><div><b>+4h</b><span>🌦️</span><strong>20°C</strong><small>💧40%</small><em>17:00</em></div><div><b>+6h</b><span>🌧️</span><strong>18°C</strong><small>💧80%</small><em>19:00</em></div><div><b>+8h</b><span>🌧️</span><strong>17°C</strong><small>💧90%</small><em>21:00</em></div><div><b>+10h</b><span>☁️</span><strong>16°C</strong><small>💧20%</small><em>23:00</em></div><div><b>+12h</b><span>🌙</span><strong>14°C</strong><small>💧10%</small><em>01:00</em></div></div></article></section><section class="bottom-row"><article class="card trip"><div class="label">Next useful trip</div><div class="line"><span class="badge m">M</span><p><b>M2 · Sallaz</b><br>150 m away → Lausanne-Flon</p><strong>3<small>min</small></strong></div><hr><div class="line"><span class="badge b">6</span><p><b>Bus 6</b><br>280 m away → Lausanne-Gare</p><strong class="purple">5<small>min</small></strong></div><footer>ⓘ Departures updated just now</footer></article><article class="card transport"><div class="label">Nearby transport</div><div class="group"><h2>🚇 Metro</h2><p><b>M2</b> Sallaz <span>150 m · 3 min</span><br><small>→ Lausanne-Flon</small></p><p><b>M2</b> Fourmi <span>240 m · 6 min</span><br><small>→ Ouchy-Olympique</small></p></div><div class="group"><h2>🚌 Bus</h2><p><b>6</b> Bus 6 <span>280 m · 5 min</span><br><small>→ Lausanne-Gare</small></p><p><b>41</b> Bus 41 <span>320 m · 9 min</span><br><small>→ Malley</small></p></div></article><article class="card destinations"><div class="label">♡ Favorite destinations</div><div class="dest"><span>🏙️</span><p><b>Lausanne-Flon</b><br>via Metro M2</p><strong>3<small>min</small></strong></div><div class="dest"><span>🏢</span><p><b>Malley</b><br>via Bus 6</p><strong class="purple">9<small>min</small></strong></div></article></section><nav class="nav"><span class="active">⌂ Home</span><span>▥ Forecast</span><span>⚙ Settings</span><button id="helpBtn">Fullscreen help</button></nav><div id="help" class="help hidden">Use Firefox menu or Android home-screen shortcut for fullscreen. This app no longer triggers browser fullscreen to avoid rendering bugs on this tablet.</div></div><script src="app.js?v=5"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280, initial-scale=1">
+  <meta name="theme-color" content="#090d12">
+  <title>Departure Companion</title>
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+  <div class="dashboard">
+    <header class="topbar">
+      <div class="location">📍 <span id="placeName">Lausanne, Switzerland</span><br><span>Departure Companion</span></div>
+      <div class="clock"><div id="time">--:--</div><span id="date">Loading</span></div>
+      <div class="mini-weather"><span id="miniIcon">☁️</span> <span id="miniTemp">--°C</span></div>
+    </header>
+    <section class="top-row">
+      <article class="card hero"><div class="label">Leaving home</div><div class="hero-main"><span id="recommendationIcon">☁️</span><div><h1 id="recommendationTitle">Loading...</h1><p id="recommendationReason">Fetching live data</p></div></div><div class="metrics"><div><b id="tempNow">--°C</b><small>Now</small></div><div><b id="tempMax" class="warm">--°C</b><small>Max today</small></div><div><b id="tempMin" class="cool">--°C</b><small>Min today</small></div><div><b id="nextMetro" class="green">--</b><small>Next metro</small></div></div></article>
+      <article class="card forecast"><div class="label">Weather — next 12 hours</div><div id="forecastSlots" class="slots"></div></article>
+    </section>
+    <section class="bottom-row">
+      <article class="card trip"><div class="label">Next useful trip</div><div id="usefulTrips"></div><footer id="transportStatus">Loading departures...</footer></article>
+      <article class="card transport"><div class="label">Nearby transport</div><div id="nearbyTransport"></div></article>
+      <article class="card destinations"><div class="label">♡ Favorite destinations</div><div id="favoriteDestinations"></div></article>
+    </section>
+    <nav class="nav"><span class="active">⌂ Home</span><span>▥ Forecast</span><span>⚙ Settings</span><button id="refreshBtn">Refresh live data</button></nav>
+    <div id="status" class="status">Starting...</div>
+  </div>
+  <script src="config.js?v=6"></script>
+  <script src="app.js?v=6"></script>
+</body>
+</html>

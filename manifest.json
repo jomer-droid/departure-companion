@@ -1,1 +1,10 @@
-{"name":"Departure Companion","short_name":"Departure","start_url":"./index.html?v=5","display":"standalone","background_color":"#090d12","theme_color":"#090d12","orientation":"landscape-primary","icons":[]}
+{
+  "name": "Departure Companion",
+  "short_name": "Departure",
+  "start_url": "./index.html?v=6",
+  "display": "standalone",
+  "background_color": "#090d12",
+  "theme_color": "#090d12",
+  "orientation": "landscape-primary",
+  "icons": []
+}
