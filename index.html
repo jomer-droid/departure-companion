@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=1280, initial-scale=1">
   <meta name="theme-color" content="#090d12">
   <title>Departure Companion</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <div class="dashboard">
@@ -14,19 +14,49 @@
       <div class="clock"><div id="time">--:--</div><span id="date">Loading</span></div>
       <div class="mini-weather"><span id="miniIcon">☁️</span> <span id="miniTemp">--°C</span></div>
     </header>
+
+    <div id="setupPanel" class="setup hidden">
+      <h2>Private local setup</h2>
+      <p>Your coordinates are saved only on this tablet in local storage. They are not stored in GitHub.</p>
+      <label>Latitude <input id="setupLat" type="text" placeholder="46.xxxxxx"></label>
+      <label>Longitude <input id="setupLon" type="text" placeholder="6.xxxxxx"></label>
+      <label>Radius <input id="setupRadius" type="number" value="500"></label>
+      <button id="saveSetupBtn">Save private settings</button>
+      <button id="useFallbackBtn">Use Lausanne center</button>
+    </div>
+
     <section class="top-row">
-      <article class="card hero"><div class="label">Leaving home</div><div class="hero-main"><span id="recommendationIcon">☁️</span><div><h1 id="recommendationTitle">Loading...</h1><p id="recommendationReason">Fetching live data</p></div></div><div class="metrics"><div><b id="tempNow">--°C</b><small>Now</small></div><div><b id="tempMax" class="warm">--°C</b><small>Max today</small></div><div><b id="tempMin" class="cool">--°C</b><small>Min today</small></div><div><b id="nextMetro" class="green">--</b><small>Next metro</small></div></div></article>
-      <article class="card forecast"><div class="label">Weather — next 12 hours</div><div id="forecastSlots" class="slots"></div></article>
+      <article class="card hero">
+        <div class="label">Leaving home</div>
+        <div class="hero-main"><span id="recommendationIcon">☁️</span><div><h1 id="recommendationTitle">Loading...</h1><p id="recommendationReason">Fetching live data</p></div></div>
+        <div class="metrics">
+          <div><b id="tempNow">--°C</b><small>Now</small></div>
+          <div><b id="tempMax" class="warm">--°C</b><small>Max today</small></div>
+          <div><b id="tempMin" class="cool">--°C</b><small>Min today</small></div>
+          <div><b id="nextMetro" class="green">--</b><small>Next metro</small></div>
+        </div>
+      </article>
+      <article class="card forecast">
+        <div class="label">Weather — next 12 hours</div>
+        <div id="forecastSlots" class="slots"></div>
+      </article>
     </section>
+
     <section class="bottom-row">
       <article class="card trip"><div class="label">Next useful trip</div><div id="usefulTrips"></div><footer id="transportStatus">Loading departures...</footer></article>
       <article class="card transport"><div class="label">Nearby transport</div><div id="nearbyTransport"></div></article>
       <article class="card destinations"><div class="label">♡ Favorite destinations</div><div id="favoriteDestinations"></div></article>
     </section>
-    <nav class="nav"><span class="active">⌂ Home</span><span>▥ Forecast</span><span>⚙ Settings</span><button id="refreshBtn">Refresh live data</button></nav>
+
+    <nav class="nav">
+      <span class="active">⌂ Home</span>
+      <span>▥ Forecast</span>
+      <button id="settingsBtn">⚙ Settings</button>
+      <button id="refreshBtn">Refresh live data</button>
+    </nav>
     <div id="status" class="status">Starting...</div>
   </div>
-  <script src="config.js?v=6"></script>
-  <script src="app.js?v=6"></script>
+  <script src="config.js?v=8"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

@@ -1,9 +1,13 @@
-# Departure Companion v6 Live
+# Departure Companion v8 — Architecture A
 
-Live-data version.
+Public GitHub Pages app + private tablet localStorage settings.
 
-Edit `config.js` to change home coordinates and radius.
+Upload:
+- index.html
+- style.css
+- config.js
+- app.js
+- README.md
 
-Data sources:
-- Open-Meteo forecast API
-- transport.opendata.ch Swiss public transport API
+Your real latitude/longitude are entered once on the tablet via Settings and saved only in localStorage.
+No private-config.js is used.
