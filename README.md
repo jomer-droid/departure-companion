@@ -1,9 +1,8 @@
-# Departure Companion v11
+# Departure Companion v12
 
-Changes:
-- Replaced 'Next metro' in Leaving Home with wind.
-- Added countdowns to Nearby Transport.
-- Switched countdown format to MM:SS.
-- Fixed Favorite Destinations countdown alignment.
-- Normalized labels like 'M m2' to 'M2'.
-- Expired departures fade out and are removed locally.
+Transport logic improvements:
+- Progressive station search radius fallback.
+- Better diagnostics: stations found, radius used, departures found.
+- Metro and Bus lists stay separate.
+- Metro and Bus entries sorted by smallest countdown first.
+- Favorite Destinations now say: To [destination] via [nearby stop] · [line].

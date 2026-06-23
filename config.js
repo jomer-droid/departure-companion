@@ -4,6 +4,7 @@ window.APP_CONFIG = {
   latitude: 46.5197,
   longitude: 6.6323,
   radiusMeters: 700,
+  maxStationSearchRadiusMeters: 1500,
 
   forecastStepHours: 2,
   forecastSlots: 7,
