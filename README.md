@@ -1,9 +1,12 @@
-# Departure Companion v9
+# Departure Companion v10
 
-Changes:
-- Live countdown in minutes and seconds for useful trips and favorites.
-- Countdown display updates every second without API calls.
-- Weather refresh interval separated from transport refresh interval.
-- Weather default refresh: 30 min.
-- Transport default refresh: 3 min.
-- Wind speed pulled from Open-Meteo and shown in the dashboard/forecast.
+Upload all files to the repository root:
+- index.html
+- style.css
+- config.js
+- app.js
+- README.md
+
+Then open: https://YOUR_USERNAME.github.io/departure-companion/?v=10
+
+If the page appears unstyled, open https://YOUR_USERNAME.github.io/departure-companion/style.css?v=10 directly. If it 404s, style.css is not in the repository root.
