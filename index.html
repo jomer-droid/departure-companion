@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=1280, initial-scale=1">
   <meta name="theme-color" content="#090d12">
   <title>Departure Companion</title>
-  <link rel="stylesheet" href="./style.css?v=10">
+  <link rel="stylesheet" href="./style.css?v=11">
 </head>
 <body>
   <div class="dashboard">
@@ -40,9 +40,10 @@
           <div><b id="tempNow">--°C</b><small>Now</small></div>
           <div><b id="tempMax" class="warm">--°C</b><small>Max today</small></div>
           <div><b id="tempMin" class="cool">--°C</b><small>Min today</small></div>
-          <div><b id="nextMetro" class="green">--</b><small>Next metro</small></div>
+          <div><b id="windMetric" class="blueish">--</b><small>Wind</small></div>
         </div>
       </article>
+
       <article class="card forecast">
         <div class="label">Weather — next 12 hours</div>
         <div id="forecastSlots" class="slots"></div>
@@ -50,9 +51,21 @@
     </section>
 
     <section class="bottom-row">
-      <article class="card trip"><div class="label">Next useful trip</div><div id="usefulTrips"></div><footer id="transportStatus">Loading departures...</footer></article>
-      <article class="card transport"><div class="label">Nearby transport</div><div id="nearbyTransport"></div></article>
-      <article class="card destinations"><div class="label">♡ Favorite destinations</div><div id="favoriteDestinations"></div></article>
+      <article class="card trip">
+        <div class="label">Next useful trip</div>
+        <div id="usefulTrips"></div>
+        <footer id="transportStatus">Loading departures...</footer>
+      </article>
+
+      <article class="card transport">
+        <div class="label">Nearby transport</div>
+        <div id="nearbyTransport"></div>
+      </article>
+
+      <article class="card destinations">
+        <div class="label">♡ Favorite destinations</div>
+        <div id="favoriteDestinations"></div>
+      </article>
     </section>
 
     <nav class="nav">
@@ -61,9 +74,11 @@
       <button id="settingsBtn">⚙ Settings</button>
       <button id="refreshBtn">Refresh live data</button>
     </nav>
+
     <div id="status" class="status">Starting...</div>
   </div>
-  <script src="./config.js?v=10"></script>
-  <script src="./app.js?v=10"></script>
+
+  <script src="./config.js?v=11"></script>
+  <script src="./app.js?v=11"></script>
 </body>
 </html>

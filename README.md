@@ -1,12 +1,9 @@
-# Departure Companion v10
+# Departure Companion v11
 
-Upload all files to the repository root:
-- index.html
-- style.css
-- config.js
-- app.js
-- README.md
-
-Then open: https://YOUR_USERNAME.github.io/departure-companion/?v=10
-
-If the page appears unstyled, open https://YOUR_USERNAME.github.io/departure-companion/style.css?v=10 directly. If it 404s, style.css is not in the repository root.
+Changes:
+- Replaced 'Next metro' in Leaving Home with wind.
+- Added countdowns to Nearby Transport.
+- Switched countdown format to MM:SS.
+- Fixed Favorite Destinations countdown alignment.
+- Normalized labels like 'M m2' to 'M2'.
+- Expired departures fade out and are removed locally.
