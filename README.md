@@ -1,8 +1,8 @@
-# Departure Companion v13 — Pollen + Routines
+# Departure Companion v14 — Compact Scrollable Cards
 
-Implemented:
-- Pollen warning card using Open-Meteo Air Quality pollen variables.
-- Expandable pollen details.
-- Editable weekly routines.
-- Local persistence for routines using localStorage.
-- Calendar signal placeholder only; no calendar data is received by the tablet.
+Changes:
+- Next Useful Trips now shows 4 rows.
+- Transport cards use smaller typography.
+- All cards scroll internally if content overflows.
+- Pollen card is more compact.
+- Pollen details are scrollable and concise.
