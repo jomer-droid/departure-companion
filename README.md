@@ -1,8 +1,8 @@
-# Departure Companion v12
+# Departure Companion v13 — Pollen + Routines
 
-Transport logic improvements:
-- Progressive station search radius fallback.
-- Better diagnostics: stations found, radius used, departures found.
-- Metro and Bus lists stay separate.
-- Metro and Bus entries sorted by smallest countdown first.
-- Favorite Destinations now say: To [destination] via [nearby stop] · [line].
+Implemented:
+- Pollen warning card using Open-Meteo Air Quality pollen variables.
+- Expandable pollen details.
+- Editable weekly routines.
+- Local persistence for routines using localStorage.
+- Calendar signal placeholder only; no calendar data is received by the tablet.

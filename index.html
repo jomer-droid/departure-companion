@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=1280, initial-scale=1">
   <meta name="theme-color" content="#090d12">
   <title>Departure Companion</title>
-  <link rel="stylesheet" href="./style.css?v=12">
+  <link rel="stylesheet" href="./style.css?v=13">
 </head>
 <body>
   <div class="dashboard">
@@ -50,6 +50,34 @@
       </article>
     </section>
 
+    <section class="middle-row">
+      <article class="card pollen">
+        <div class="label">Pollen warning</div>
+        <div id="pollenSummary" class="pollen-main">Loading pollen...</div>
+        <button id="pollenToggle" class="small-btn">Details</button>
+        <div id="pollenDetails" class="pollen-details hidden"></div>
+      </article>
+
+      <article class="card routines">
+        <div class="label">Today’s reminders</div>
+        <div id="routineToday"></div>
+        <button id="routineSettingsBtn" class="small-btn">Edit routines</button>
+      </article>
+
+      <article class="card calendar-placeholder">
+        <div class="label">Calendar signal</div>
+        <div class="placeholder-card"><b>Prepared for future</b><span>No calendar data on tablet</span></div>
+      </article>
+    </section>
+
+    <section id="routineEditor" class="routine-editor hidden">
+      <h2>Editable weekly routines</h2>
+      <p>Stored locally on this tablet only.</p>
+      <div id="routineList"></div>
+      <button id="addRoutineBtn">Add routine</button>
+      <button id="closeRoutineEditorBtn">Close</button>
+    </section>
+
     <section class="bottom-row">
       <article class="card trip">
         <div class="label">Next useful trip</div>
@@ -78,7 +106,7 @@
     <div id="status" class="status">Starting...</div>
   </div>
 
-  <script src="./config.js?v=12"></script>
-  <script src="./app.js?v=12"></script>
+  <script src="./config.js?v=13"></script>
+  <script src="./app.js?v=13"></script>
 </body>
 </html>
